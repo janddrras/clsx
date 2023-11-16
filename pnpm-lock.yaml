@@ -11,6 +11,9 @@ dependencies:
   '@astrojs/svelte':
     specifier: ^4.0.3
     version: 4.0.3(astro@3.5.4)(svelte@4.2.3)(typescript@5.2.2)(vite@4.5.0)
+  '@studio-freight/lenis':
+    specifier: ^1.0.27
+    version: 1.0.27
   astro:
     specifier: ^3.5.4
     version: 3.5.4(typescript@5.2.2)
@@ -841,6 +844,10 @@ packages:
     dependencies:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.15.0
+    dev: false
+
+  /@studio-freight/lenis@1.0.27:
+    resolution: {integrity: sha512-1I6EaWR9rxdFjIJtF52CtETJt9ngfY4AjawrJY5pLxCvHa/lQZ+1v2gTUntwNZkuks6E2It6YEXV6jnpnCZFjA==}
     dev: false
 
   /@sveltejs/vite-plugin-svelte-inspector@1.0.4(@sveltejs/vite-plugin-svelte@2.5.2)(svelte@4.2.3)(vite@4.5.0):
