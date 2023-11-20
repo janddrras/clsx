@@ -3,19 +3,27 @@ import Layout from "../layouts/Layout.astro"
 ---
 
 <Layout title="Contact">
-  <main>
+  <div id="contact">
     <h1>Contact</h1>
     <div class="sticky">
       <p>Get in touch with me via</p>
     </div>
-  </main>
+  </div>
+  <div class="section2">
+    <h2>section 2</h2>
+  </div>
 </Layout>
 
 <style>
-  main {
-    position: relative;
+  #contact {
+    margin: 2rem;
+    background-color: blueviolet;
     height: 100vh;
-    background-color: white;
+  }
+  .section2 {
+    background-color: azure;
+    margin: 2rem;
+    min-height: 100vh;
   }
   .sticky {
     position: sticky;
