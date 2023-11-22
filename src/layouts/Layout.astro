@@ -1,5 +1,6 @@
 ---
 import Footer from "../components/Footer.astro"
+import Header from "../components/Header.svelte"
 interface Props {
   title: string
 }
@@ -26,7 +27,6 @@ const { title } = Astro.props
   ScrollTrigger.create({
     start: "50% 50%",
     end: "bottom center",
-    markers: true,
     onEnter: () => gsap.to("main", { backgroundColor: "rgba(255,255,255,1)", duration: 2, ease: "power2" }),
     onLeaveBack: () => gsap.to("main", { backgroundColor: "rgba(205,205,205,1)", duration: 2, ease: "power2" })
   })
@@ -41,10 +41,11 @@ const { title } = Astro.props
     <meta name="generator" content={Astro.generator} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;900&display=swap" rel="stylesheet" />
     <title>{title}</title>
   </head>
   <body>
+    <Header client:visible />
     <main>
       <slot />
     </main>
@@ -66,7 +67,7 @@ const { title } = Astro.props
     --height: calc(100vh - 2.5rem);
   }
   html {
-    font-family: "Open Sans", sans-serif;
+    font-family: "Montserrat", sans-serif;
     color: var(--black);
     letter-spacing: 0.01rem;
     scroll-behavior: smooth;
