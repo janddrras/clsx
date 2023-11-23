@@ -1,28 +1,167 @@
 ---
+import Checkbox from "../components/Checkbox.astro"
+import Title from "../components/Title.astro"
 import Layout from "../layouts/Layout.astro"
+
+const label = "We will be happy to advise you. The CLSX sales team looks forward to speaking to you."
 ---
 
 <Layout title="Contact">
   <div id="contact">
-    <h1>Contact</h1>
-    <div class="sticky">
-      <p>Get in touch with me via</p>
+    <Title label="Contact" title="Lets" text={label}>
+      <span>Get in touch</span><br />
+      <span class="bold">Let's have a chat!</span>
+    </Title>
+    <div class="second-column">
+      <div class="wrapper">
+        <img src="/images/buildings.jpg" alt="buildings" />
+      </div>
     </div>
-  </div>
-  <div class="section2">
-    <h2>section 2</h2>
+    <div class="contact-info">
+      <div class="wrapper bcg-img">
+        <img src="/images/contact-photo.jpg" alt="Alexandra Stella" />
+      </div>
+      <div class="contact-text">
+        <h2>Alexandra <span class="bold">Stella</span></h2>
+        <h3>Head of Sales</h3>
+        <p><a href="tel:+49123456789">+49 123 456 789</a></p>
+        <p><a href="mailto:sales@office.com">sales@office.com</a></p>
+      </div>
+    </div>
+    <div class="contact-form">
+      <form action="submit">
+        <div class="form-container">
+          <div class="name">
+            <input type="text" id="name" name="name" placeholder="Name" />
+            <input type="text" id="surname" name="surname" placeholder="Surname" />
+          </div>
+          <input type="number" id="phone" name="phone" placeholder="Phone (optional)" />
+          <input type="email" id="email" name="email" placeholder="E-mail" />
+          <textarea id="message" name="message" placeholder="Your message"></textarea>
+        </div>
+        <div class="agreement">
+          <Checkbox>
+            <p>
+              I have read and agreed to the
+              <a href="/terms">terms and conditions.</a>
+            </p>
+          </Checkbox>
+        </div>
+        <button class="btn" type="submit">Send</button>
+      </form>
+    </div>
   </div>
 </Layout>
 
 <style>
   #contact {
-    height: 100vh;
-  }
-  .section2 {
     min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 1.25rem;
+    padding: 1.5rem;
   }
-  .sticky {
+  .contact-info {
+    position: relative;
+    min-height: 25rem;
+    padding: 15% 2rem 10% 45%;
+  }
+  .bcg-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
+  h2 {
+    font-size: 2.5rem;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+  }
+  h3 {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 2rem;
+  }
+  .contact-text p {
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+    text-decoration: underline;
+  }
+  .bold {
+    font-weight: 700;
+  }
+  .second-column {
+    grid-column: 2;
+    grid-row: 1 / span 3;
+    height: calc(100vh - 3rem);
     position: sticky;
-    top: 2rem;
+    top: 1.5rem;
+    align-self: start;
+  }
+  .wrapper {
+    border-radius: 1rem;
+    overflow: hidden;
+    height: 100%;
+  }
+  .wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .contact-form {
+    min-height: 45rem;
+    padding: 4rem;
+    background-color: var(--light-grey);
+    border-radius: 1rem;
+  }
+  .form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
+  button {
+    padding-top: 1rem;
+    width: 60%;
+  }
+  input,
+  textarea {
+    padding: 1rem;
+    margin-bottom: 2rem;
+    border: none;
+    border-bottom: 1px solid var(--grey);
+    background: none;
+    font-size: 1.2rem;
+    font-weight: 300;
+  }
+  textarea {
+    min-height: 10rem;
+  }
+  input::placeholder,
+  textarea::placeholder {
+    color: var(--dark-grey);
+    font-family: "Montserrat", sans-serif;
+    font-weight: 300;
+    font-size: 1.2rem;
+  }
+  input:focus,
+  textarea:focus {
+    outline: none;
+    border-bottom: 1px solid rgb(44, 136, 255);
+  }
+  .agreement {
+    margin: 2rem 0;
+  }
+  .agreement p {
+    font-size: 1.2rem;
+    font-weight: 300;
+  }
+  .agreement a {
+    text-decoration: underline;
   }
 </style>
