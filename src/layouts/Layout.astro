@@ -1,6 +1,6 @@
 ---
 import Footer from "../components/Footer.astro"
-import Header from "../components/Header.svelte"
+import Nav from "../components/Nav.svelte"
 interface Props {
   title: string
 }
@@ -45,7 +45,7 @@ const { title } = Astro.props
     <title>{title}</title>
   </head>
   <body>
-    <Header client:visible />
+    <Nav client:visible />
     <main>
       <slot />
     </main>
@@ -65,6 +65,7 @@ const { title } = Astro.props
     --green: #76cc3e;
     --width: calc(100vw - 2.5rem - 1.2rem);
     --height: calc(100vh - 2.5rem);
+    --max-width: 1600px;
   }
   html {
     font-family: "Montserrat", sans-serif;
@@ -93,7 +94,7 @@ const { title } = Astro.props
   .btn {
     font-size: 1.2rem;
     font-weight: 300;
-    padding: 0.5rem 1.5rem 1rem 2rem;
+    padding: 0.7rem 2rem 0.7rem 2rem;
     border-radius: 2rem;
     background-color: var(--black);
     color: white;
@@ -110,11 +111,18 @@ const { title } = Astro.props
     position: relative;
     z-index: 2;
     background-color: rgba(205, 205, 205, 1);
+    margin-top: -15vh;
+    padding-top: 15vh;
   }
   main::after {
     margin-bottom: 100vh;
     content: "";
     display: block;
+  }
+  .container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 1.5rem;
   }
   /* lenis */
   html.lenis {

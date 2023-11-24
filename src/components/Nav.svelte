@@ -17,7 +17,7 @@
 
 <svelte:window bind:scrollY={y} />
 
-<header>
+<header class="container">
   <div class="main-menu">
     <Logo size={0.5} />
     <button class="menu-button" on:click={() => (isOpen = !isOpen)}>
@@ -36,7 +36,7 @@
   </div>
 
   {#if y > windowHeight / 2 && y < fullHeight - windowHeight}
-    <div class="second-menu" transition:fade={{ duration: 2000 }}>
+    <div class="second-menu" transition:fade={{ duration: 1500 }}>
       <Logo size={0.4} />
       <button class="menu-button" on:click={() => (isOpen = !isOpen)}>
         {#if isOpen}
@@ -65,30 +65,30 @@
 
   {#if isOpen}
     <nav>
-      <div class="menu-grid" transition:fly={{ y: "-100%", duration: 1500, easing: quartOut }}>
+      <div class="menu-grid" transition:fly={{ y: "-100%", duration: 1000, easing: quartOut }}>
         <a href="/" on:click={() => (isOpen = false)}>
-          <div class="menu-link" in:fly={{ y: "80%", duration: 1000, delay: 200, easing: quartOut }}>
+          <div class="menu-link" in:fly={{ y: "80%", duration: 800, delay: 100, easing: quartOut }}>
             <p class="background-letter">C</p>
             <span>Home</span>
             <img src="/arrow_outward.svg" alt="arrow icon" />
           </div>
         </a>
         <a href="/about" on:click={() => (isOpen = false)}>
-          <div class="menu-link" in:fly={{ y: "80%", duration: 1000, delay: 300, easing: quartOut }}>
+          <div class="menu-link" in:fly={{ y: "80%", duration: 800, delay: 300, easing: quartOut }}>
             <p class="background-letter">L</p>
             <span>About</span>
             <img src="/arrow_outward.svg" alt="arrow icon" />
           </div>
         </a>
         <a href="/gallery" on:click={() => (isOpen = false)}>
-          <div class="menu-link" in:fly={{ y: "80%", duration: 1000, delay: 400, easing: quartOut }}>
+          <div class="menu-link" in:fly={{ y: "80%", duration: 800, delay: 400, easing: quartOut }}>
             <p class="background-letter">S</p>
             <span>Gallery</span>
             <img src="/arrow_outward.svg" alt="arrow icon" />
           </div>
         </a>
         <a href="/contact" on:click={() => (isOpen = false)}>
-          <div class="menu-link no-border" in:fly={{ y: "80%", duration: 1000, delay: 500, easing: quartOut }}>
+          <div class="menu-link no-border" in:fly={{ y: "80%", duration: 800, delay: 500, easing: quartOut }}>
             <p class="background-letter">X</p>
             <span>Contact</span>
             <img src="/arrow_outward.svg" alt="arrow icon" />
@@ -96,8 +96,8 @@
         </a>
       </div>
 
-      <div class="second-grid" transition:fly={{ y: "-400%", duration: 1500, delay: 200, easing: quartOut }}>
-        <div class="second-grid-link" in:fly={{ y: "80%", duration: 800, delay: 900, easing: quartOut }}>
+      <div class="second-grid" transition:fly={{ y: "-400%", duration: 1000, delay: 200, easing: quartOut }}>
+        <div class="second-grid-link" in:fly={{ y: "80%", duration: 600, delay: 900, easing: quartOut }}>
           <p>
             <a href="mailto:office@office.com" on:click={() => (isOpen = false)}> Mail Us </a>
           </p>
@@ -108,7 +108,7 @@
             href="https://instagram.com"
             target="_blank"
             on:click={() => (isOpen = false)}
-            in:fly={{ y: "80%", duration: 800, delay: 1100, easing: quartOut }}
+            in:fly={{ y: "80%", duration: 800, delay: 900, easing: quartOut }}
           >
             <img src="/instagram.svg" alt="instagram icon" />
           </a>
@@ -116,14 +116,14 @@
             href="https://linkedin.com"
             target="_blank"
             on:click={() => (isOpen = false)}
-            in:fly={{ y: "80%", duration: 800, delay: 1300, easing: quartOut }}
+            in:fly={{ y: "80%", duration: 800, delay: 1000, easing: quartOut }}
           >
             <img src="/linkedin.svg" alt="linkedin icon" />
           </a>
           <button
             class="close-button"
             on:click={() => (isOpen = false)}
-            in:fly={{ y: "80%", duration: 800, delay: 1500, easing: quartOut }}
+            in:fly={{ y: "80%", duration: 800, delay: 1100, easing: quartOut }}
           >
             x
           </button>
@@ -137,14 +137,13 @@
 <style>
   header {
     position: relative;
-    background-color: rgba(205, 205, 205, 1);
     z-index: 3;
-    padding: 1.25rem 1.5rem;
   }
   .main-menu {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding-top: 1.5rem;
   }
   .second-menu {
     display: flex;
@@ -210,7 +209,7 @@
     background-color: var(--yellow-shade);
     z-index: 4;
     border-radius: 1rem;
-    opacity: 0.9;
+    opacity: 0.95;
     backdrop-filter: blur(2px);
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -225,7 +224,7 @@
     background-color: var(--yellow-shade);
     z-index: 4;
     border-radius: 1rem;
-    opacity: 0.9;
+    opacity: 0.95;
     backdrop-filter: blur(2px);
     display: grid;
     grid-template-columns: repeat(4, 1fr);

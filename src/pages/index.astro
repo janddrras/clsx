@@ -1,8 +1,22 @@
 ---
+import Header from "../components/Header.astro"
 import Layout from "../layouts/Layout.astro"
+import Banner from "../components/Banner.astro"
+
+import headerPhoto from "../images/skyline-singapore.jpg"
+import { Image } from "astro:assets"
 ---
 
-<Layout title="Welcome to Astro.">
-  <main>Main</main>
+<Layout title="CLSX | Home">
+  <Header label="welcome" title="Welcome to" bold="CLSX">
+    <Image src={headerPhoto} alt="Skyline of Singapore" />
+  </Header>
+  <Banner />
+  <section></section>
+  <section></section>
 </Layout>
-<style></style>
+<style>
+  section {
+    height: 100vh;
+  }
+</style>

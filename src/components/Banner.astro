@@ -1,0 +1,54 @@
+<div class="container">
+  <div class="banner">
+    <div class="text">
+      <p>Welcome to <span>CLSX</span>, the fake website!</p>
+      <p>Welcome to <span>CLSX</span>, the fake website!</p>
+      <p>Welcome to <span>CLSX</span>, the fake website!</p>
+    </div>
+  </div>
+</div>
+
+<style>
+  .banner {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+  }
+  .text {
+    padding: 1rem 0;
+    white-space: nowrap;
+    display: flex;
+    gap: 2rem;
+    font-size: 2.5rem;
+    font-weight: 500;
+    animation: move 15s linear infinite;
+  }
+  span {
+    font-weight: 700;
+  }
+  .banner::before,
+  .banner::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 25%;
+    height: 100%;
+    z-index: 2;
+  }
+  .banner::after {
+    right: 0;
+    background: linear-gradient(to left, rgba(205, 205, 205, 1), transparent);
+  }
+  .banner::before {
+    left: 0;
+    background: linear-gradient(to right, rgba(205, 205, 205, 1), transparent);
+  }
+  @keyframes move {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+</style>
