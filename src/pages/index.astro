@@ -5,6 +5,8 @@ import Banner from "../components/Banner.astro"
 
 import headerPhoto from "../images/skyline-singapore.jpg"
 import { Image } from "astro:assets"
+import IntroText from "../components/IntroText.astro"
+import ContactLink from "../components/ContactLink.astro"
 ---
 
 <Layout title="CLSX | Home">
@@ -12,6 +14,8 @@ import { Image } from "astro:assets"
     <Image src={headerPhoto} alt="Skyline of Singapore" />
   </Header>
   <Banner />
+  <IntroText />
+  <ContactLink />
   <section></section>
   <section></section>
 </Layout>

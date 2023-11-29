@@ -36,7 +36,7 @@
   </div>
 
   {#if y > windowHeight / 2 && y < fullHeight - windowHeight}
-    <div class="second-menu" transition:fade={{ duration: 1500 }}>
+    <div class="second-menu" transition:fade={{ duration: 500 }}>
       <Logo size={0.4} />
       <button class="menu-button" on:click={() => (isOpen = !isOpen)}>
         {#if isOpen}
@@ -162,7 +162,7 @@
     overflow: hidden;
   }
   .second-menu-overlay {
-    filter: blur(1px);
+    backdrop-filter: blur(1rem);
     position: absolute;
     bottom: 0;
     left: 0;
@@ -195,8 +195,8 @@
     left: 0;
     width: 100%;
     height: 100vh;
-    backdrop-filter: blur(2px);
-    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(1.5rem);
+    background-color: rgba(0, 0, 0, 0.6);
     z-index: 2;
     cursor: pointer;
   }
@@ -206,10 +206,10 @@
     left: 1.2rem;
     right: 1.2rem;
     min-height: 25rem;
-    background-color: var(--yellow-shade);
+    background: var(--gradient);
     z-index: 4;
     border-radius: 1rem;
-    opacity: 0.95;
+    opacity: 0.97;
     backdrop-filter: blur(2px);
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -221,10 +221,10 @@
     left: 1.2rem;
     right: 1.2rem;
     min-height: 5rem;
-    background-color: var(--yellow-shade);
+    background: var(--gradient);
     z-index: 4;
     border-radius: 1rem;
-    opacity: 0.95;
+    opacity: 0.97;
     backdrop-filter: blur(2px);
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -261,7 +261,7 @@
   }
   .close-button {
     border: none;
-    background-color: var(--yellow);
+    background-color: var(--bright-yellow);
     cursor: pointer;
     font-size: 2.4rem;
     font-weight: 400;
@@ -281,7 +281,7 @@
     font-size: 1.8rem;
     text-decoration: none;
     border-right: 1px solid var(--black);
-    transition: all 0.6s ease-in-out;
+    transition: all 0.4s ease-in-out;
   }
   .no-border {
     border-right: none;

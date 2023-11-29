@@ -4,8 +4,8 @@ import { Image } from "astro:assets"
 import Checkbox from "../components/Checkbox.astro"
 import Layout from "../layouts/Layout.astro"
 
-import alexandra from "../images/contact-photo.jpg"
-import buildings from "../images/buildings.jpg"
+import alexandra from "../images/contact-photo-o.jpg"
+import buildings from "../images/buildings-o.webp"
 ---
 
 <Layout title="CLSX | Contact">
@@ -75,7 +75,7 @@ import buildings from "../images/buildings.jpg"
     justify-content: center;
     text-align: left;
     padding: 8rem 4rem;
-    background-color: var(--yellow-shade);
+    background: var(--gradient);
     border-radius: 1rem;
     height: max-content;
   }
@@ -135,16 +135,6 @@ import buildings from "../images/buildings.jpg"
     position: sticky;
     top: 1.5rem;
     align-self: start;
-  }
-  .wrapper {
-    border-radius: 1rem;
-    overflow: hidden;
-    height: 100%;
-  }
-  .wrapper img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
   }
   .contact-form {
     min-height: 45rem;

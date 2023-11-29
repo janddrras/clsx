@@ -1,0 +1,61 @@
+<section>
+  <div class="container">
+    <div class="intro-container">
+      <h2 class="clsx">CLSX</h2>
+      <div class="text">
+        <h3>About this site</h3>
+        <p>
+          This is an experiment trying to explore the features of Astro. Technologies used: framework - Astro, clientside library - Svelte,
+          animations - Gsap, smoooth scrolling - Lenis.
+        </p>
+        <h3>Another paragraph</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam consequuntur qui, debitis ex itaque non vitae aut illo temporibus
+          placeat natus recusandae saepe, unde commodi in deserunt quisquam quibusdam. Ipsa praesentium ipsam rerum odit. Qui dignissimos
+          accusamus harum et cum.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .intro-container {
+    margin-top: 2rem;
+    background-color: white;
+    padding: var(--large-padding);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    grid-auto-columns: 1fr;
+    border-radius: 1rem;
+    color: var(--dark-grey);
+  }
+  .clsx {
+    font-size: 3rem;
+    font-weight: 400;
+    position: relative;
+    height: max-content;
+    padding-left: 2rem;
+  }
+  .clsx::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "";
+    display: block;
+    width: 4px;
+    height: 100%;
+    background-color: var(--yellow);
+    margin-right: 2rem;
+  }
+  h3 {
+    margin: 2rem 0;
+    font-size: 2rem;
+    font-weight: 500;
+  }
+  p {
+    line-height: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+</style>

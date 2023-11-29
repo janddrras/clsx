@@ -1,0 +1,99 @@
+---
+import Link from "./Link.astro"
+import { Image } from "astro:assets"
+
+import team from "../images/team-o.jpg"
+---
+
+<div class="container">
+  <div class="contact-link">
+    <a href="/contact">
+      <div class="text-container">
+        <div class="text">
+          <p class="label">Are you interested?</p>
+          <p class="title">
+            Let's have a chat.
+            <p class="bold">Contact Us!</p>
+          </p>
+        </div>
+        <div class="icon">
+          <img src="/arrow_forward.svg" alt="arrow icon" />
+        </div>
+      </div>
+    </a>
+    <div class="image">
+      <Image src={team} alt="Fistbump" />
+    </div>
+  </div>
+</div>
+<style>
+  .contact-link {
+    height: 30vh;
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    align-items: center;
+    justify-content: space-between;
+    margin: 1rem 0;
+    gap: 1rem;
+  }
+  .image {
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem;
+    overflow: hidden;
+  }
+  .image img {
+    height: 100%;
+    width: 100%;
+    object-position: top;
+    object-fit: cover;
+  }
+  a {
+    border-radius: 1rem;
+    background: var(--gradient);
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 2rem;
+    align-items: flex-end;
+    justify-content: flex-start;
+    height: 100%;
+    transition: all 0.4s ease-in-out;
+  }
+  a:hover {
+    transform: scale(0.98);
+  }
+  a .icon {
+    transition: all 0.4s ease-in-out;
+  }
+  a:hover .icon {
+    transform: rotate(-90deg);
+  }
+  .text-container {
+    height: max-content;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+  .label {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+  .title {
+    font-size: 2rem;
+    font-weight: 300;
+  }
+  .bold {
+    font-size: 2rem;
+    font-weight: 700;
+  }
+  .icon {
+    height: 2.5rem;
+    width: 2.5rem;
+    background-color: var(--black);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+</style>

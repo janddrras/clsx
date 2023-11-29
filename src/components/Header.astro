@@ -2,6 +2,23 @@
 const { label, title, bold } = Astro.props
 ---
 
+<script>
+  import { gsap } from "gsap"
+
+  gsap.from(".header-container", {
+    opacity: 0.5,
+    x: 200,
+    duration: 2.5,
+    ease: "expo.out"
+  })
+  gsap.from(".header-image", {
+    opacity: 0.5,
+    x: -200,
+    duration: 2.5,
+    ease: "expo.out"
+  })
+</script>
+
 <section class="header container">
   <div class="header-container">
     <p class="label">{label}</p>
@@ -12,14 +29,14 @@ const { label, title, bold } = Astro.props
     <p class="description">This is a fake website ispired by the award winning site:</p>
     <a href="https://www.hqx21.com/" target="_blank" class="btn">HQX 21</a>
   </div>
-  <div class="image">
+  <div class="header-image">
     <slot />
   </div>
 </section>
 
 <style>
   .header {
-    min-height: 20vh;
+    min-height: 15vh;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
@@ -33,7 +50,7 @@ const { label, title, bold } = Astro.props
     justify-content: center;
     text-align: left;
     padding: 8rem 4rem;
-    background-color: var(--yellow-shade);
+    background: var(--gradient);
     border-radius: 1rem;
     height: 100%;
   }
@@ -55,14 +72,9 @@ const { label, title, bold } = Astro.props
     font-weight: 400;
     line-height: 1.6;
   }
-  .image {
+  .header-image {
     border-radius: 1rem;
     overflow: hidden;
     height: 100%;
-  }
-  .image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
   }
 </style>
