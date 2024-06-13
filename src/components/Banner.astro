@@ -17,9 +17,10 @@
   .text {
     padding: 1rem 0;
     white-space: nowrap;
+    color: white;
     display: inline-block;
     font-size: 2.5rem;
-    font-weight: 500;
+    font-weight: 400;
     animation: move 25s linear infinite;
   }
   .text p {
@@ -39,12 +40,12 @@
     z-index: 2;
   }
   .banner::after {
+    background: linear-gradient(to left, var(--black), transparent);
     right: 0;
-    background: linear-gradient(to left, rgba(205, 205, 205, 1), transparent);
   }
   .banner::before {
     left: 0;
-    background: linear-gradient(to right, rgba(205, 205, 205, 1), transparent);
+    background: linear-gradient(to right, var(--black), transparent);
   }
   @keyframes move {
     0% {

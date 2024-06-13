@@ -1,5 +1,6 @@
 <script>
   export let isSmall = false
+  export let color
 </script>
 
 <div class="logo">
@@ -20,7 +21,7 @@
     <path d="M47.4 11.7L35.7 0C14.9 8 0 28.3 0 51.8C0 77.8 18.1 99.7 42.2 105.7C64.8 78.4 66 40.2 47.4 11.7Z" fill="#E8E221" />
     <path d="M128 61.1C128 30.5 103 5.5 72.4 5.5C65.4 5.5 58.7 6.8 52.5 9.2L124.2 80.9C126.7 74.8 128 68.1 128 61.1Z" fill="#76CC3E" />
   </svg>
-  <p>CLSX</p>
+  <p style={`color: ${color}`}>CLSX</p>
 </div>
 
 <style>

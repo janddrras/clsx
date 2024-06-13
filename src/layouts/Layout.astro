@@ -3,9 +3,10 @@ import Footer from "../components/Footer.astro"
 import Nav from "../components/Nav.svelte"
 interface Props {
   title: string
+  page?: string
 }
 
-const { title } = Astro.props
+const { title, page } = Astro.props
 ---
 
 <script>
@@ -16,20 +17,30 @@ const { title } = Astro.props
 
   const lenis = new Lenis({ lerp: 0.15 })
 
-  lenis.on("scroll", ScrollTrigger.update)
+  const main = document.querySelector("main")
+  const large = main.getAttribute("data-attribute") === "large"
 
-  function raf(time) {
-    lenis.raf(time)
+  if (large) {
+    main.style.backgroundColor = "#1f1f1f"
+    ScrollTrigger.create({
+      trigger: "main",
+      start: "+=1200",
+      markers: true,
+      onEnter: () => gsap.to("main", { backgroundColor: "#fff", duration: 1, ease: "power2" }),
+      onLeaveBack: () => gsap.to("main", { backgroundColor: "#1f1f1f", duration: 1, ease: "power2" })
+    })
+
+    lenis.on("scroll", ScrollTrigger.update)
+    gsap.ticker.add((time) => lenis.raf(time * 1000))
+    gsap.ticker.lagSmoothing(0)
+  } else {
+    function raf(time) {
+      lenis.raf(time)
+      requestAnimationFrame(raf)
+    }
+
     requestAnimationFrame(raf)
   }
-
-  requestAnimationFrame(raf)
-  ScrollTrigger.create({
-    start: "50% 50%",
-    end: "bottom center",
-    onEnter: () => gsap.to("main", { backgroundColor: "rgba(255,255,255,1)", duration: 2, ease: "power2" }),
-    onLeaveBack: () => gsap.to("main", { backgroundColor: "rgb(255,255,255)", duration: 2, ease: "power2" })
-  })
 </script>
 
 <html lang="en">
@@ -45,8 +56,8 @@ const { title } = Astro.props
     <title>{title}</title>
   </head>
   <body>
-    <Nav client:visible />
-    <main>
+    <Nav client:visible {page} />
+    <main data-attribute={page}>
       <slot />
     </main>
     <Footer />

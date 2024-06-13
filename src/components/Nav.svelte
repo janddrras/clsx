@@ -4,6 +4,9 @@
   import Logo from "./Logo.svelte"
   import { quartOut } from "svelte/easing"
 
+  export let page
+  let color = page === "large" ? "white" : "var(--dark-grey)"
+
   let isOpen = false
   let y
   let fullHeight
@@ -19,7 +22,7 @@
 
 <header class="container">
   <div class="main-menu">
-    <Logo />
+    <Logo {color} />
     <button class="menu-button" on:click={() => (isOpen = !isOpen)}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
