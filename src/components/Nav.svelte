@@ -19,7 +19,7 @@
 
 <header class="container">
   <div class="main-menu">
-    <Logo size={0.5} />
+    <Logo />
     <button class="menu-button" on:click={() => (isOpen = !isOpen)}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -37,7 +37,7 @@
 
   {#if y > windowHeight / 2 && y < fullHeight - windowHeight}
     <div class="second-menu" transition:fade={{ duration: 500 }}>
-      <Logo size={0.4} />
+      <Logo isSmall />
       <button class="menu-button" on:click={() => (isOpen = !isOpen)}>
         {#if isOpen}
           <svg width="40%" height="40%" style="" viewBox="0 0 7 7" fill="#1f1f1f" xmlns="http://www.w3.org/2000/svg">
@@ -155,7 +155,7 @@
     left: 50%;
     transform: translateX(-50%);
     height: 70px;
-    width: 235px;
+    padding: 5px;
     border-radius: 25px;
     margin: auto;
     z-index: 4;
@@ -201,6 +201,8 @@
     cursor: pointer;
   }
   .menu-grid {
+    max-width: var(--max-width);
+    margin: auto;
     position: fixed;
     top: 1.2rem;
     left: 1.2rem;
@@ -216,6 +218,8 @@
     overflow: hidden;
   }
   .second-grid {
+    margin: auto;
+    max-width: var(--max-width);
     position: fixed;
     top: calc(1.2rem + 25rem + 0.8rem);
     left: 1.2rem;

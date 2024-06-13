@@ -28,7 +28,7 @@ const { title } = Astro.props
     start: "50% 50%",
     end: "bottom center",
     onEnter: () => gsap.to("main", { backgroundColor: "rgba(255,255,255,1)", duration: 2, ease: "power2" }),
-    onLeaveBack: () => gsap.to("main", { backgroundColor: "rgba(205,205,205,1)", duration: 2, ease: "power2" })
+    onLeaveBack: () => gsap.to("main", { backgroundColor: "rgb(255,255,255)", duration: 2, ease: "power2" })
   })
 </script>
 
@@ -115,7 +115,7 @@ const { title } = Astro.props
   main {
     position: relative;
     z-index: 2;
-    background-color: rgba(205, 205, 205, 1);
+    background-color: rgb(255, 255, 255);
     margin-top: -15vh;
     padding-top: 15vh;
   }
