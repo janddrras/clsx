@@ -1,6 +1,6 @@
 ---
-import Footer from "../components/Footer.astro"
-import Nav from "../components/Nav.svelte"
+import Footer from "../components/layout/Footer.astro"
+import Nav from "../components/layout/Nav.svelte"
 interface Props {
   title: string
   page?: string
@@ -25,7 +25,6 @@ const { title, page } = Astro.props
     ScrollTrigger.create({
       trigger: "main",
       start: "+=1200",
-      markers: true,
       onEnter: () => gsap.to("main", { backgroundColor: "#fff", duration: 1, ease: "power2" }),
       onLeaveBack: () => gsap.to("main", { backgroundColor: "#1f1f1f", duration: 1, ease: "power2" })
     })
@@ -59,6 +58,7 @@ const { title, page } = Astro.props
     <Nav client:visible {page} />
     <main data-attribute={page}>
       <slot />
+      <div class="space"></div>
     </main>
     <Footer />
   </body>
@@ -134,6 +134,9 @@ const { title, page } = Astro.props
     margin-bottom: 100vh;
     content: "";
     display: block;
+  }
+  .space {
+    height: 1rem;
   }
   .container {
     max-width: var(--max-width);

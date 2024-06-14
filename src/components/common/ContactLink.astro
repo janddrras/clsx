@@ -1,8 +1,7 @@
 ---
-import Link from "./Link.astro"
 import { Image } from "astro:assets"
 
-import team from "../images/team-o.jpg"
+import team from "../../images/team-o.jpg"
 ---
 
 <div class="container">
@@ -13,7 +12,8 @@ import team from "../images/team-o.jpg"
           <p class="label">Are you interested?</p>
           <p class="title">
             Let's have a chat.
-            <p class="bold">Contact Us!</p>
+            <br />
+            <span class="bold">Contact Us!</span>
           </p>
         </div>
         <div class="icon">
@@ -28,7 +28,7 @@ import team from "../images/team-o.jpg"
 </div>
 <style>
   .contact-link {
-    height: 30vh;
+    height: 30rem;
     display: grid;
     grid-template-columns: 2fr 3fr;
     align-items: center;
@@ -69,9 +69,16 @@ import team from "../images/team-o.jpg"
     transform: rotate(-90deg);
   }
   .text-container {
-    height: max-content;
+    height: 100%;
     display: flex;
     align-items: flex-end;
+    justify-content: space-between;
+  }
+  .text {
+    padding-top: 0.5rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
     justify-content: space-between;
   }
   .label {
@@ -95,5 +102,13 @@ import team from "../images/team-o.jpg"
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+  @media screen and (max-width: 768px) {
+    .contact-link {
+      grid-template-columns: 1fr;
+    }
+    .image {
+      /* display: none; */
+    }
   }
 </style>
