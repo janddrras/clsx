@@ -1,0 +1,158 @@
+---
+import { Image } from "astro:assets"
+import Image4 from "../../images/Image04.webp"
+import Image5 from "../../images/Image05.webp"
+---
+
+<section id="frontpage-grid" class="container">
+  <div class="grey-text">
+    <h2>The ideal <span>location</span></h2>
+    <h3>In the middle of Europe</h3>
+    <p>
+      Our location in the heart of Europe makes it easy to reach us from all over the world. The airport is only 20 minutes away and the
+      train station is just a 10-minute walk from our office. We are located in the city center, surrounded by restaurants, bars, and shops.
+      The perfect place to work and enjoy life.
+    </p>
+    <h3>Urban Location</h3>
+    <p>Our office is located in the city center, surrounded by restaurants, bars, and shops. The perfect place to work and enjoy life.</p>
+    <h3>Easy to reach</h3>
+    <p>
+      Our location in the heart of Europe makes it easy to reach us from all over the world. The airport is only 20 minutes away and the
+      train station is just a 10-minute walk from our office.
+    </p>
+  </div>
+  <div class="card-1 text-card">
+    <h2>The Building</h2>
+    <p>
+      The 3-part building ensemble consists of a basement and 5 upper floors. In total there are approx. 21,500 m2 of commercial space
+      available for production, sales and office space.
+    </p>
+  </div>
+  <div class="card-2 text-card">
+    <h2>The Use</h2>
+    <p>
+      A spacious support grid and a vertically divisible base zone allow room design that is individually tailored to the needs of your
+      company. Semi-truck-capable routing and generous loading bays ensure smooth arrival and delivery processes.
+    </p>
+  </div>
+  <div class="card-3 img-card">
+    <Image src={Image4} alt="Location" />
+  </div>
+  <div class="card-4 img-card">
+    <Image src={Image5} alt="Location" />
+  </div>
+</section>
+
+<style>
+  #frontpage-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 1rem;
+    grid-template-areas:
+      "card-1 card-3 grey-text"
+      "card-4 card-2 grey-text";
+    margin: 2rem 0;
+  }
+
+  .grey-text {
+    grid-area: grey-text;
+    background-color: var(--light-grey);
+    padding: var(--small-padding);
+    border-radius: 1rem;
+    font-weight: 400;
+  }
+
+  .grey-text h2 {
+    font-size: 2.7rem;
+    font-weight: 400;
+    margin-bottom: 3rem;
+    text-transform: capitalize;
+  }
+
+  .grey-text h2 span {
+    font-weight: 700;
+  }
+
+  .grey-text h3 {
+    font-size: 1.7rem;
+    margin-bottom: 1rem;
+    font-weight: 400;
+  }
+
+  .grey-text p {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+
+  .card-1 {
+    grid-area: card-1;
+  }
+
+  .card-2 {
+    grid-area: card-2;
+  }
+
+  .card-3 {
+    grid-area: card-3;
+  }
+
+  .card-4 {
+    grid-area: card-4;
+  }
+
+  .img-card {
+    border-radius: 1rem;
+    overflow: hidden;
+  }
+
+  .img-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .text-card {
+    padding: var(--small-padding);
+    border-radius: 1rem;
+    background: var(--gradient);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .text-card h2 {
+    font-size: 2.2rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+    text-transform: capitalize;
+  }
+
+  .text-card p {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+
+  @media (max-width: 1200px) {
+    #frontpage-grid {
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas:
+        "grey-text grey-text"
+        "card-1 card-3"
+        "card-4 card-2";
+    }
+  }
+  @media (max-width: 780px) {
+    #frontpage-grid {
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        "grey-text"
+        "card-1"
+        "card-3"
+        "card-2"
+        "card-4";
+    }
+  }
+</style>

@@ -9,7 +9,8 @@ import linkImage2 from "../images/Image08.webp"
 import { Image } from "astro:assets"
 import IntroText from "../components/common/IntroText.astro"
 import ContactLink from "../components/common/ContactLink.astro"
-import ImageLink from "../components/layout/ImageLink.astro"
+import ImageLink from "../components/home-page/ImageLink.astro"
+import FrontGrid from "../components/home-page/FrontGrid.astro"
 ---
 
 <Layout title="CLSX | Home" page="large">
@@ -22,9 +23,10 @@ import ImageLink from "../components/layout/ImageLink.astro"
     <ImageLink title="About Us" label="Learn more about our company" address="/about" image={linkImage1} />
     <ImageLink title="Gallery" label="A collection of photos and ideas" address="/gallery" image={linkImage2} />
   </section>
-  <section></section>
+  <FrontGrid />
   <ContactLink />
 </Layout>
+
 <style>
   section {
     height: 100%;
@@ -33,5 +35,10 @@ import ImageLink from "../components/layout/ImageLink.astro"
     display: flex;
     justify-content: space-between;
     gap: 2rem;
+  }
+  @media (max-width: 768px) {
+    #welcome-links {
+      flex-direction: column;
+    }
   }
 </style>
