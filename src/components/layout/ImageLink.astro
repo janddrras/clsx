@@ -1,0 +1,102 @@
+---
+import { Image } from "astro:assets"
+
+const { address, image, label, title } = Astro.props
+---
+
+<div class="image-link">
+  <a href={address}>
+    <div class="text-container">
+      <div class="text">
+        <p class="label">{label}</p>
+        <p class="title">{title}</p>
+      </div>
+      <div class="icon">
+        <img src="/arrow_forward_black.svg" alt="arrow icon" />
+      </div>
+    </div>
+    <div class="image">
+      <Image src={image} alt="Image" class="bcg-img" />
+    </div>
+  </a>
+</div>
+
+<style>
+  .image-link {
+    aspect-ratio: 1 / 1;
+    position: relative;
+    overflow: hidden;
+    border-radius: 1rem;
+    width: 100%;
+    margin: 2rem 0;
+    transition: transform 0.4s ease-in-out;
+  }
+  .image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 1rem;
+  }
+  .image .bcg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .image-link:hover .icon {
+    transform: rotate(-90deg);
+  }
+
+  .image-link:hover {
+    transform: scale(0.98);
+  }
+
+  .image-link .text-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 100%);
+    padding: var(--small-padding);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 2;
+  }
+
+  .image-link .text {
+    color: white;
+  }
+
+  .image-link .label {
+    font-size: 1rem;
+    font-weight: 400;
+    margin: 0;
+  }
+
+  .image-link .title {
+    font-size: 2.5rem;
+    font-weight: 500;
+    margin: 0;
+  }
+
+  .image-link .icon {
+    transition: all 0.4s ease-in-out;
+  }
+
+  .image-link .icon img {
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+  .icon {
+    height: 2.5rem;
+    width: 2.5rem;
+    color: var(--black);
+    background-color: var(--yellow);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+</style>

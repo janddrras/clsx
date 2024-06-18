@@ -4,9 +4,12 @@ import Layout from "../layouts/Layout.astro"
 import Banner from "../components/common/Banner.astro"
 
 import headerPhoto from "../images/skyline-singapore.jpg"
+import linkImage1 from "../images/Image07.webp"
+import linkImage2 from "../images/Image08.webp"
 import { Image } from "astro:assets"
 import IntroText from "../components/common/IntroText.astro"
 import ContactLink from "../components/common/ContactLink.astro"
+import ImageLink from "../components/layout/ImageLink.astro"
 ---
 
 <Layout title="CLSX | Home" page="large">
@@ -15,12 +18,20 @@ import ContactLink from "../components/common/ContactLink.astro"
   </Header>
   <Banner />
   <IntroText />
+  <section id="welcome-links" class="container">
+    <ImageLink title="About Us" label="Learn more about our company" address="/about" image={linkImage1} />
+    <ImageLink title="Gallery" label="A collection of photos and ideas" address="/gallery" image={linkImage2} />
+  </section>
+  <section></section>
   <ContactLink />
-  <section></section>
-  <section></section>
 </Layout>
 <style>
   section {
-    height: 100vh;
+    height: 100%;
+  }
+  #welcome-links {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
   }
 </style>

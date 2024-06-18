@@ -27,7 +27,7 @@ const { label, title, bold } = Astro.props
       <span class="bold">{bold}</span>
     </h1>
     <p class="description">This is a fake website ispired by the award winning site:</p>
-    <a href="https://www.hqx21.com/" target="_blank" class="btn">HQX 21</a>
+    <a href="https://www.hqx21.com/" target="_blank" class="btn">HQX 21 <span>&rarr;</span> </a>
   </div>
   <div class="header-image">
     <slot />
@@ -71,10 +71,17 @@ const { label, title, bold } = Astro.props
     font-size: 1.3rem;
     font-weight: 400;
     line-height: 1.6;
+    margin-bottom: 2rem;
   }
   .header-image {
     border-radius: 1rem;
     overflow: hidden;
     height: 100%;
+  }
+  a span {
+    font-size: 1.8rem;
+    display: inline-block;
+    padding-bottom: 0.5rem;
+    margin-left: 0.5rem;
   }
 </style>

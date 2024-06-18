@@ -1,6 +1,6 @@
 <script>
   export let isSmall = false
-  export let color
+  export let color = "var(--dark-grey)"
 </script>
 
 <div class="logo">
