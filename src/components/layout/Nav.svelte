@@ -208,8 +208,8 @@
     margin: auto;
     position: fixed;
     top: 1.2rem;
-    left: 1.2rem;
-    right: 1.2rem;
+    left: calc(1.2rem + 1.5rem);
+    right: calc(1.2rem + 1.5rem);
     min-height: 25rem;
     background: var(--gradient);
     z-index: 4;
@@ -225,8 +225,8 @@
     max-width: var(--max-width);
     position: fixed;
     top: calc(1.2rem + 25rem + 0.8rem);
-    left: 1.2rem;
-    right: 1.2rem;
+    left: calc(1.2rem + 1.5rem);
+    right: calc(1.2rem + 1.5rem);
     min-height: 5rem;
     background: var(--gradient);
     z-index: 4;

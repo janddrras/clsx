@@ -6,20 +6,22 @@ const { label, title, bold } = Astro.props
   import { gsap } from "gsap"
 
   gsap.from(".header-container", {
-    opacity: 0.5,
+    opacity: 0,
     x: 200,
     duration: 2.5,
+    delay: 0.25,
     ease: "expo.out"
   })
   gsap.from(".header-image", {
-    opacity: 0.5,
+    opacity: 0,
     x: -200,
+    delay: 0.25,
     duration: 2.5,
     ease: "expo.out"
   })
 </script>
 
-<section class="header container">
+<section class="header">
   <div class="header-container">
     <p class="label">{label}</p>
     <h1>
@@ -41,7 +43,7 @@ const { label, title, bold } = Astro.props
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
     gap: 1.25rem;
-    padding: 1.5rem;
+    padding: 1.5rem 0;
   }
   .header-container {
     display: flex;

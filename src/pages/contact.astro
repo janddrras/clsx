@@ -62,13 +62,11 @@ import buildings from "../images/buildings-o.webp"
 <style>
   #contact {
     min-height: 100vh;
-    max-width: var(--max-width);
-    margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
     gap: 1.25rem;
-    padding: 1.5rem;
+    padding: 1.5rem 0;
   }
   .header {
     display: flex;
@@ -192,5 +190,33 @@ import buildings from "../images/buildings-o.webp"
   }
   .agreement a {
     text-decoration: underline;
+  }
+  @media screen and (max-width: 930px) {
+    #contact {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+    }
+    .header {
+      padding: 4rem 2rem;
+    }
+    .second-column {
+      display: none;
+    }
+    .contact-text {
+      padding: 2rem;
+      text-align: right;
+    }
+    .contact-info {
+      padding: 10% 2rem 10% 2rem;
+    }
+    .contact-form {
+      padding: 2rem;
+    }
+    .form-container {
+      height: max-content;
+    }
+    button {
+      width: 100%;
+    }
   }
 </style>

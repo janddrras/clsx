@@ -4,28 +4,27 @@ import { Image } from "astro:assets"
 import team from "../../images/team-o.jpg"
 ---
 
-<div class="container">
-  <div class="contact-link">
-    <a href="/contact">
-      <div class="text-container">
-        <div class="text">
-          <p class="label">Are you interested?</p>
-          <p class="title">
-            Let's have a chat.
-            <br />
-            <span class="bold">Contact Us!</span>
-          </p>
-        </div>
-        <div class="icon">
-          <img src="/arrow_forward.svg" alt="arrow icon" />
-        </div>
+<div class="contact-link">
+  <a href="/contact">
+    <div class="text-container">
+      <div class="text">
+        <p class="label">Are you interested?</p>
+        <p class="title">
+          Let's have a chat.
+          <br />
+          <span class="bold">Contact Us!</span>
+        </p>
       </div>
-    </a>
-    <div class="image">
-      <Image src={team} alt="Fistbump" />
+      <div class="icon">
+        <img src="/arrow_forward.svg" alt="arrow icon" />
+      </div>
     </div>
+  </a>
+  <div class="image">
+    <Image src={team} alt="Fistbump" />
   </div>
 </div>
+
 <style>
   .contact-link {
     height: 30rem;

@@ -57,8 +57,10 @@ const { title, page } = Astro.props
   <body>
     <Nav client:visible {page} />
     <main data-attribute={page}>
-      <slot />
-      <div class="space"></div>
+      <div class="container">
+        <slot />
+        <div class="space"></div>
+      </div>
     </main>
     <Footer />
   </body>
