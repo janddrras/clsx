@@ -7,6 +7,9 @@ import headerPhoto from "../images/Image03.webp"
 import { Image } from "astro:assets"
 import IntroText from "../components/common/IntroText.astro"
 import ContactLink from "../components/common/ContactLink.astro"
+
+import Image1 from "../images/Image05.webp"
+import Image2 from "../images/Image12.webp"
 ---
 
 <Layout title="CLSX | Home" page="large">
@@ -15,12 +18,108 @@ import ContactLink from "../components/common/ContactLink.astro"
   </Header>
   <Banner />
   <IntroText />
-  <section></section>
+  <section id="presentation" class="container">
+    <div class="text-box box-1">
+      <h2>Living Floridsdorf</h2>
+      <h3>Your new <span>business district</span></h3>
+      <p>
+        In the heart of the 21st century. Located in Vienna's district, the HQX combines urban liveliness with the peace and beauty of
+        natural environments. In Floridsdorf, urban life meets a green environment and excellent local infrastructure, and in the immediate
+        vicinity there are numerous shopping opportunities, restaurants, educational institutions and green spaces.
+      </p>
+      <p>
+        You can relax wonderfully on the Danube and the Old Danube, while public transport takes you quickly to Vienna city center. This mix
+        of urbanity and proximity to nature creates a unique working environment and a high quality of life.
+      </p>
+    </div>
+    <div class="text-box box-2">
+      <h3>Optimal goods transport network</h3>
+      <p>
+        Vienna has the best connections for intermodal goods transport, excellent rail infrastructure and optimal connections to shipping
+        traffic.
+      </p>
+      <h3>International environment</h3>
+      <p>Vienna is home to many international companies and institutions and an ideal location for networking and collaboration.</p>
+      <h3>Optimal goods transport network</h3>
+      <p>
+        In Austria and Vienna in particular, there is great potential for growth and innovation thanks to a large pool of qualified workers.
+      </p>
+    </div>
+    <div class="img-ctnr box-3">
+      <Image src={Image1} alt="Image of a modern living room" />
+    </div>
+    <div class="img-ctnr box-4">
+      <Image src={Image2} alt="Image of an old town" />
+    </div>
+  </section>
   <section></section>
   <ContactLink />
 </Layout>
 <style>
-  section {
-    height: 100vh;
+  #presentation {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "box-1 box-3"
+      "box-4 box-2";
+    gap: 1rem;
+    margin: 2rem 0;
+  }
+  .img-ctnr {
+    border-radius: 1rem;
+    overflow: hidden;
+  }
+
+  .img-ctnr img {
+    width: auto;
+    height: 100%;
+    object-fit: cover;
+  }
+  .text-box {
+    background-color: var(--light-grey);
+    padding: 4rem;
+    border-radius: 1rem;
+  }
+  .text-box h2 {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+  }
+  .text-box h3 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    font-weight: 400;
+    text-transform: capitalize;
+  }
+  .text-box h3 span {
+    margin-bottom: 1rem;
+    font-weight: 700;
+  }
+  .text-box p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+  }
+  .box-1 {
+    grid-area: box-1;
+  }
+  .box-2 {
+    grid-area: box-2;
+  }
+  .box-3 {
+    grid-area: box-3;
+  }
+  .box-4 {
+    grid-area: box-4;
+  }
+  @media screen and (max-width: 930px) {
+    #presentation {
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        "box-1"
+        "box-3"
+        "box-2"
+        "box-4";
+    }
   }
 </style>

@@ -22,7 +22,7 @@
 
 <header class="container">
   <div class="main-menu">
-    <Logo {color} />
+    <a href="/"><Logo {color} /></a>
     <button class="menu-button" on:click={() => (isOpen = !isOpen)}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -40,7 +40,7 @@
 
   {#if y > windowHeight / 2 && y < fullHeight - windowHeight}
     <div class="second-menu" transition:fade={{ duration: 500 }}>
-      <Logo isSmall />
+      <a href="/"><Logo isSmall /></a>
       <button class="menu-button" on:click={() => (isOpen = !isOpen)}>
         {#if isOpen}
           <svg width="40%" height="40%" style="" viewBox="0 0 7 7" fill="#1f1f1f" xmlns="http://www.w3.org/2000/svg">
