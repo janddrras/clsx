@@ -13,8 +13,10 @@
     "@astrojs/check": "^0.3.1",
     "@astrojs/svelte": "^4.0.3",
     "@studio-freight/lenis": "^1.0.27",
+    "@types/ol": "^7.0.0",
     "astro": "^3.5.4",
     "gsap": "^3.12.2",
+    "ol": "^9.2.4",
     "svelte": "^4.0.0",
     "typescript": "^5.2.2"
   },
