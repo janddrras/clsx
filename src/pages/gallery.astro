@@ -2,8 +2,8 @@
 import Header from "../components/layout/Header.astro"
 import Layout from "../layouts/Layout.astro"
 import GalleryComp from "../components/gallery-page/Gallery.astro"
-
-import headerPhoto from "../images/Image01.webp"
+import headerPhoto from "../images/skyline-singapore.jpg"
+import sectionPhoto from "../images/Image01.webp"
 import { Image } from "astro:assets"
 import IntroText from "../components/common/IntroText.astro"
 import ContactLink from "../components/common/ContactLink.astro"
@@ -15,12 +15,80 @@ import ContactLink from "../components/common/ContactLink.astro"
   </Header>
   <IntroText />
   <GalleryComp />
-  <section></section>
+  <section>
+    <div class="text">
+      <h2>The perfect stage for your products</h2>
+      <h3>
+        Your window <span>to the world</span>
+      </h3>
+      <p>
+        Our versatile showroom areas offer the perfect space to present creativity and local production to a demanding target group. The
+        large shop windows facing Shuttleworthstrasse are literally your window to the world, offering maximum visibility and an invitation
+        to linger. With the showrooms, you can implement a wide variety of presentation formats and concepts.
+      </p>
+      <p>
+        In the HQX, you create a unique platform. The direct connection between the sales areas and the production facilities offers
+        customers a unique insight into the manufacturing process and underlines the quality and authenticity of your products.
+      </p>
+      <div class="btn">View brochure</div>
+    </div>
+    <div class="img">
+      <Image src={sectionPhoto} alt="Showroom" />
+    </div>
+  </section>
   <ContactLink />
 </Layout>
 
 <style>
   section {
-    height: 100vh;
+    display: flex;
+    gap: 1rem;
+    margin: 2rem 0;
+  }
+  .text {
+    flex: 1;
+    background-color: var(--light-grey);
+    padding: 4rem;
+    border-radius: 1rem;
+    max-width: 50%;
+  }
+  h2 {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  h3 {
+    font-size: 3rem;
+    font-weight: 400;
+    margin-bottom: 3rem;
+  }
+  h3 span {
+    font-weight: 600;
+  }
+  p {
+    font-size: 1.2rem;
+    line-height: 1.4;
+    margin-bottom: 1rem;
+  }
+  .img {
+    flex: 1;
+    border-radius: 1rem;
+    overflow: hidden;
+  }
+  .img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .btn {
+    width: fit-content;
+    margin-top: 4rem;
+  }
+  @media screen and (max-width: 930px) {
+    section {
+      flex-direction: column;
+    }
+    .text {
+      max-width: 100%;
+    }
   }
 </style>
