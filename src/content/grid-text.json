@@ -1,0 +1,27 @@
+{
+  "box1": {
+    "title": "Urban Productivity",
+    "frontText": "Framework conditions for different industries.",
+    "backText": "The HQX creates spaces that are both functional and provide space for collaboration and maximum productivity. The HQX's versatile base zone has space for your production lines, inventory and employees."
+  },
+  "box2": {
+    "title": "Versatile Usage Options",
+    "frontText": "Product areas for every need.",
+    "backText": "In this base zone, the rooms have an impressive clear ceiling height of up to 9 meters and can be used for large-volume business in the sense of Industry 4.0 or storage. Additional rooms can be created with a false ceiling."
+  },
+  "box3": {
+    "title": "Room for Growth",
+    "frontText": "The architecture of tomorrow.",
+    "backText": "While the production and retail areas in the base zone with its flexible room heights offer enough space for large-scale businesses or specialized research and scientific companies, you can lay the foundation for your company's success in the office spaces above."
+  },
+  "box4": {
+    "title": "Flexible Goods Logistics",
+    "frontText": "Adaptable to your needs.",
+    "backText": "All access roads and loading bays are designed so that even large transports can be delivered and unloaded smoothly. The well thought-out logistical planning allows for an efficient flow of materials."
+  },
+  "box5": {
+    "title": "Synergy with the City",
+    "frontText": "For a successful collaboration.",
+    "backText": "The spatial proximity of urban production to sales and office areas creates connections that simplify communication and ultimately increase efficiency. This allows you to optimize production processes in real time and adapt sales strategies."
+  }
+}

@@ -1,6 +1,7 @@
 ---
 import Header from "../components/layout/Header.astro"
 import Layout from "../layouts/Layout.astro"
+import GalleryComp from "../components/gallery-page/Gallery.astro"
 
 import headerPhoto from "../images/Image01.webp"
 import { Image } from "astro:assets"
@@ -9,14 +10,15 @@ import ContactLink from "../components/common/ContactLink.astro"
 ---
 
 <Layout title="CLSX | Gallery" page="large">
-  <Header label="welcome" title="Welcome to" bold="CLSX">
+  <Header label="welcome to the" title="Gallery of" bold="CLSX">
     <Image src={headerPhoto} alt="Skyline of Singapore" />
   </Header>
   <IntroText />
-  <section></section>
+  <GalleryComp />
   <section></section>
   <ContactLink />
 </Layout>
+
 <style>
   section {
     height: 100vh;
