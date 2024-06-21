@@ -4,14 +4,12 @@ import Image2 from "../../images/Image06.webp"
 import Image3 from "../../images/Image10.webp"
 import Image4 from "../../images/Image02.webp"
 import { Image } from "astro:assets"
-import Text from "../../content/grid-text.json"
+import Text from "../../content/grid-page/grid-text.json"
 import TextBox from "./TextBox.astro"
 
 const images = [Image1, Image2, Image3, Image4]
 
 const GridContent = Object.keys(Text).map((key, i) => ({ ...Text[key], image: images[i] }))
-
-console.log(GridContent)
 ---
 
 <div class="grid">
